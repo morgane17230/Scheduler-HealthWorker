@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Scheduler</title>
+</head>
+<body>
+    <main class="container">
+        <!--Header-->
+        <header class="header" id="year">
+            <button id="prevYear">prev</button>
+            <span id="current-year"></span>
+            <button id="nextYear">next</button>
+        </header>
+        <!--/ Header-->
+                
+            <div class="months"></div>
+            <div class="week">
+                <header class="header" id="month">
+                    <button id="prevMonth">prev</button>
+                    <span id="current-month"></span>
+                    <button id="nextMonth">next</button>
+                </header>
+                <div class="header-week">
+                    <div class="moment">
+                        Jour
+                    </div>
+                    <div class="moment">
+                        Matin
+                    </div>
+                    <div class="moment">
+                        AM
+                    </div>
+                    <div class="moment">
+                        Nuit
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Months of year -->
+                <template id="add-month">
+                    <a href="#" class="month"></a>
+                </template>
+            <!--/ Months of year -->
+            
+
+                <!-- add-day Template-->
+                <template id="add-day">
+                    <div class="day-content">
+                        <div class="moment" id="dateName">
+                            Jour
+                        </div>
+                        <div class="moment" id="matin">
+                            
+                        </div>
+                        <div class="moment" id="am">
+                       
+                        </div>
+                        <div class="moment" id="nuit">
+                         
+                        </div>
+                    </div>
+                </template>
+                <!--/ add-day Template-->
+
+            </div>
+        </section>
+    </main>
+    <script src="./bundle.js"></script>
+</body>
+</html>
