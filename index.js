@@ -89,7 +89,10 @@ const app = {
     clone.querySelector("#dateName").textContent = dayjs(`${headerDate}-${i}`)
       .locale(locale)
       .format("ddd DD");
-
+    const moments = clone.querySelectorAll(".moment");
+    for (const moment of moments) {
+      moment.addEventListener("click", app.getMoment);
+    }
     parent.appendChild(clone);
   },
 
@@ -180,7 +183,7 @@ const app = {
       .month(next)
       .locale(locale)
       .format("MMMM YYYY");
- 
+
     headerDate = dayjs(currentYear).month(next).locale(locale).format("YYYY-M");
 
     const oldDays = document.querySelectorAll(".day-content");
@@ -192,6 +195,39 @@ const app = {
     for (var i = 1; i < daysMonth + 1; i++) {
       app.daysInDOM(headerDate, i);
     }
+  },
+
+  getMoment: (event) => {
+    event.preventDefault();
+    const target = event.currentTarget;
+    let date = target.closest("div").parentNode.getAttribute("day");
+    const momentContent = target.getAttribute("id");
+    moment = target.getAttribute("value");
+
+    switch (moment) {
+      case null:
+        target.style.color = "green";
+        target.classList.replace("mdi-help", "mdi-check");
+        target.setAttribute("value", true);
+        break;
+      case "true":
+        target.removeAttribute("value");
+        target.setAttribute("value", false);
+        target.style.color = "red";
+        target.classList.replace("mdi-check", "mdi-window-close");
+        break;
+      case "false":
+        target.removeAttribute("value");
+        target.setAttribute("value", true);
+        target.style.color = "green";
+        target.classList.replace("mdi-window-close", "mdi-check");
+        break;
+    }
+    momentChanged = target.getAttribute("value");
+
+    // VARIABLES A RECUPERER
+
+    console.log(date, momentContent, momentChanged);
   },
 };
 

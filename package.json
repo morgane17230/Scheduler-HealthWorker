@@ -12,6 +12,7 @@
   "author": "Gambis Morgane",
   "license": "ISC",
   "dependencies": {
+    "@mdi/font": "^5.9.55",
     "browserify": "^17.0.0",
     "dayjs": "^1.10.4",
     "nodemon": "^2.0.7",
