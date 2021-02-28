@@ -1,3 +1,13 @@
+@keyframes button {
+  from {
+    color: #00d6b3;
+    background-color: white;
+  }
+  to {
+    color: white;
+    background-color: #00d6b3;
+  }
+}
 html {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -10,26 +20,38 @@ body {
   padding: 0;
   margin: 0;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
   padding: 1em;
   font-size: 1.5em;
 }
-.button{
-  border: none;
+button {
+  padding: 0.5em 0.5em;
   background-color: transparent;
+  color: #00d6b3;
+  border-radius: 50%;
+  border: none;
+}
+button:focus {
+  color: white;
+  animation: button 500ms linear 1 normal;
+  background-color: #00d6b3;
+  outline-style: none;
 }
 #month {
   text-transform: capitalize;
   vertical-align: middle;
 }
+#current-month {
+  text-decoration: none;
+  color: black;
+}
 .months {
   display: flex;
   flex-wrap: wrap;
   min-height: 70vh;
-  margin: 1em;
+  align-self: center;
 }
 .month {
   display: block;
@@ -38,7 +60,13 @@ body {
   text-decoration: none;
   text-justify: center;
   text-align: center;
-  border: 1px solid black;
+  color: #00d6b3;
+  border: 1.5px solid #00d6b3;
+}
+.month:active {
+  color: white;
+  background-color: #00d6b3;
+  border: 1px solid #00d6b3;
 }
 .week {
   display: flex;
@@ -48,14 +76,25 @@ body {
   display: flex;
   font-weight: bold;
   justify-content: stretch;
+  color: black;
+}
+.header-week .moment {
+  display: flex;
+  flex-direction: column;
+  background-color: #00d6b3;
+  color: white;
+  border: 1.5px solid white;
 }
 .day-content {
   display: flex;
   justify-content: stretch;
 }
+.day-content .moment {
+  border: 1.5px solid #00d6b3;
+}
 .moment {
-  border: 1px solid black;
   padding: 1.3em 0;
-  width: calc(100% / 3.1);
+  width: calc(100% / 3.3);
   text-align: center;
+  font-weight: bold;
 }

@@ -22,20 +22,20 @@
             <div class="week">
                 <header class="header" id="month">
                     <button class="button mdi mdi-chevron-left mdi-36px" id="prevMonth"></button>
-                    <span id="current-month"></span>
+                    <a href="#" id="current-month"></a>
                     <button class="button mdi mdi-chevron-right mdi-36px" id="nextMonth"></button>
                 </header>
                 <div class="header-week">
-                    <div class="moment">
-                        Jour
+                    <div class="moment mdi mdi-calendar mdi-36px">
+                        Date
                     </div>
-                    <div class="moment">
+                    <div class="moment mdi mdi-weather-sunny mdi-36px">
                         Matin
                     </div>
-                    <div class="moment">
-                        AM
+                    <div class="moment mdi mdi-weather-sunset mdi-36px">
+                        Soir
                     </div>
-                    <div class="moment">
+                    <div class="moment mdi mdi-weather-night mdi-36px">
                         Nuit
                     </div>
                 </div>
@@ -52,15 +52,15 @@
                 <template id="add-day">
                     <div class="day-content">
                         <div class="moment" id="dateName">
-                            Jour
+                            Date
                         </div>
-                        <div class="mdi mdi-help mdi-36px moment detail" id="matin">
+                        <div class="mdi mdi-help mdi-36px moment detail" style="color: #00d6b3" id="matin">
                         
                         </div>
-                        <div class="mdi mdi-help mdi-36px moment detail" id="am">
+                        <div class="mdi mdi-help mdi-36px moment detail" style="color: #00d6b3" id="soir">
                           
                         </div>
-                        <div class="mdi mdi-help mdi-36px moment detail" id="nuit">
+                        <div class="mdi mdi-help mdi-36px moment detail" style="color: #00d6b3" id="nuit">
                         
                         </div>
                     </div>

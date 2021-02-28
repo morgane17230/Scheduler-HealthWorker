@@ -22,6 +22,9 @@ const app = {
     document
       .getElementById("nextMonth")
       .addEventListener("click", app.getNextMonth);
+    document
+      .getElementById("current-month")
+      .addEventListener("click", app.returnMonths);
   },
 
   getCurrentYear: () => {
@@ -35,6 +38,12 @@ const app = {
       const months = dayjs().month(i);
       app.monthsInDOM(months);
     }
+  },
+  returnMonths: () => {
+    document.getElementById("year").style.display = "flex";
+    document.getElementById("month").style.display = "none";
+    document.querySelector(".week").style.display = "none";
+    document.querySelector(".months").style.display = "flex";
   },
 
   monthsInDOM: (months) => {
@@ -208,6 +217,7 @@ const app = {
       case null:
         target.style.color = "green";
         target.classList.replace("mdi-help", "mdi-check");
+
         target.setAttribute("value", true);
         break;
       case "true":
